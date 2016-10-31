@@ -1,20 +1,28 @@
 {
-  "name": "babel-preset-es2015-rollup",
-  "version": "1.2.0",
-  "dependencies": {
-    "babel-plugin-external-helpers": "^6.4.0",
-    "babel-preset-es2015": "^6.3.13",
-    "modify-babel-preset": "^2.1.1"
-  },
-  "description": "This is [babel-preset-es2015](http://babeljs.io/docs/plugins/preset-es2015/), minus [modules-commonjs](http://babeljs.io/docs/plugins/transform-es2015-modules-commonjs/), plus [external-helpers](http://babeljs.io/docs/plugins/external-helpers/). Use it with [rollup-plugin-babel](https://github.com/rollup/rollup-plugin-babel).",
+  "name": "babel-preset-es2015-bk",
+  "version": "1.0.0",
+  "description": "personal es2015-preset, use it with rollup-plugin-babel.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "rollup/babel-preset-es2015-rollup",
-  "author": "Rich Harris",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bornkiller/babel-preset-es2015-bk.git"
+  },
+  "keywords": [
+    "es2015-preset"
+  ],
+  "author": "bornkiller <hjj491229492@hotmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rollup/babel-preset-es2015-rollup/issues"
+    "url": "https://github.com/bornkiller/babel-preset-es2015-bk/issues"
+  },
+  "homepage": "https://github.com/bornkiller/babel-preset-es2015-bk#readme",
+  "dependencies": {
+    "babel-plugin-external-helpers": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "modify-babel-preset": "^3.2.0"
   }
 }

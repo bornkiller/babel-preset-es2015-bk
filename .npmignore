@@ -38,8 +38,7 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-/dist
-.idea
-.DS_Store
-/test/*.bundle.js
-
+# Develop files
+.babelrc
+.eslintignore
+.eslintrc.yml
