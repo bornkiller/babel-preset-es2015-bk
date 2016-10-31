@@ -11,9 +11,9 @@ module.exports = modify('es2015', {
   // remove generator not used
   'transform-regenerator': false,
 
-  // support static property
-  'transform-class-properties': true,
+  // skip external helpers node environment
+  'external-helpers': false,
 
-  // support external helpers
-  'external-helpers': !process.env.SKIP_EXTERNAL
+  // support static property
+  'transform-class-properties': true
 });
