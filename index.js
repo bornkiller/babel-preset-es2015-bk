@@ -17,7 +17,13 @@ var preset = modify('es2015', {
   'transform-es2015-modules-commonjs': false,
 
   // remove generator not used
-  'transform-regenerator': false
+  'transform-regenerator': false,
+
+  // active external code
+  'external-helpers': true,
+
+  // support HMR modal implement
+  'transform-object-rest-spread': true
 });
 
 preset.plugins.unshift(transformClassProperties);
