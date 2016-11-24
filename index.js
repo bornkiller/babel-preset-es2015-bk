@@ -19,8 +19,8 @@ var preset = modify('es2015', {
   // remove generator not used
   'transform-regenerator': false,
 
-  // active external code
-  'external-helpers': true,
+  // personal usage only in tiny project, external-helpers output too much
+  'external-helpers': false,
 
   // support HMR modal implement
   'transform-object-rest-spread': true
