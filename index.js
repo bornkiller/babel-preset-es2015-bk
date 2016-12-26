@@ -5,27 +5,32 @@
 
 /**
  * @description
- * - use within package bundle, never expect generate too much external code
+ * - use within package bundle, not expect generate too much external code
  * - means i don't need external helpers
  * - transform-class-properties need run before transform-classed
  */
-var modify = require('modify-babel-preset');
-var transformClassProperties = require('babel-plugin-transform-class-properties');
+'use strict';
 
-var preset = modify('es2015', {
-  // remove commonjs transform for tree-shaking compatible
-  'transform-es2015-modules-commonjs': false,
+const relative = require('require-relative');
+const location = require.resolve( 'babel-preset-es2015' );
+const presets = require('babel-preset-es2015');
 
-  // remove generator not used
-  'transform-regenerator': false,
+const commonjs = relative( 'babel-plugin-transform-es2015-modules-commonjs', location);
+const generator = relative('babel-plugin-transform-regenerator', location);
+const transformClassProperties = require('babel-plugin-transform-class-properties');
+const transformObjectRestSpread = require('babel-plugin-transform-object-rest-spread');
 
-  // personal usage only in tiny project, external-helpers output too much
-  'external-helpers': false,
+// personal plugin sets
+let plugins;
 
-  // support HMR modal implement
-  'transform-object-rest-spread': true
+plugins = presets.plugins.filter(plugin => {
+  let matcher = Array.isArray(plugin) ? plugin[0] : plugin;
+
+  return matcher !== commonjs && matcher !== generator;
 });
 
-preset.plugins.unshift(transformClassProperties);
+plugins = [transformClassProperties, ...plugins, transformObjectRestSpread];
 
-module.exports = preset;
+module.exports = {
+  plugins
+};
