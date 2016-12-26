@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-es2015-bk",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "personal es2015-preset, use it with rollup-plugin-babel.",
   "main": "index.js",
   "scripts": {
